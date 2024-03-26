@@ -11,11 +11,5 @@
             "src": "/(.*)",
             "dest":"/"
         }
-    ],
-    "functions": {
-        "postinstall": {
-            "runtime": "@now/node@16.7.0",
-            "memory": 128
-        }
-    }
+    ]
 }
