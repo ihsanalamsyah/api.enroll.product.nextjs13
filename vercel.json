@@ -12,13 +12,6 @@
             "dest":"/"
         }
     ],
-    "env": {
-        "DB_HOST": "bwptsjyl9lb50qaccwku-mysql.services.clever-cloud.com",
-        "DB_PORT": "3306",
-        "DB_USERNAME": "umvkzd3qqciplsys",
-        "DB_PASSWORD": "H0m64Vjwmwbn5DxYQHx5",
-        "DB_DBNAME": "bwptsjyl9lb50qaccwku"
-    },
     "functions": {
         "postinstall": {
             "runtime": "@now/node@16.7.0",
