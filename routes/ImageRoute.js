@@ -11,7 +11,7 @@ const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
 
 
-// router.post('/api/imageupload', auth, upload.single('image'), uploadImage);
-// router.post('/api/getimage', auth, getImage);
+router.post('/api/imageupload', auth, upload.single('image'), uploadImage);
+router.post('/api/getimage', auth, getImage);
 
 export default router;
