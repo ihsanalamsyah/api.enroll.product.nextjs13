@@ -42,7 +42,7 @@ export const uploadImage = async (req, res) =>{
             
         fs.unlinkSync(req.file.path);
         //return res.send(image.image_blob);
-        return res.status(200).json({ status: "Success", msg: 'Success upload image', data: blobData  });
+        return res.status(200).json({ status: "OK", msg: 'Success upload image', data: blobData  });
 
     }
     catch (error){
@@ -63,7 +63,7 @@ export const getImage = async (req, res) =>{
         }
 
         
-        return res.status(200).json({ status: "Success", msg: 'Success load image', data: response.image_blob  });
+        return res.status(200).json({ status: "OK", msg: 'Success load image', data: response.image_blob  });
         //return res.status(200).send(response.image_blob);
     }
     catch (error){
