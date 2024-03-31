@@ -1,59 +1,5 @@
 import Product from '../models/ProductModel.js';
-import User from '../models/UserModel.js';
-import UserProduct from '../models/UserProductModel.js';
-import { Op } from 'sequelize';
 
-export const getUserGetProducts = async (req, res) =>{
-    try {
-        let response;
-        const response2 = await User.findOne({
-            where: {
-                name: req.body.name
-            }
-        });
-       
-        if (response2.role == "User"){
-            response = await UserProduct.findAll({
-                where:{
-                    [Op.or]:[
-                        {'$UserProduct.enroll_date$': null},
-                        {'$User.name$': req.body.name}
-                    ]                  
-                },
-                include: [{
-                    model: User,
-                    required: true,
-                    right: false
-                },{
-                    model: Product,
-                    required: false,
-                    right: true
-                }],
-                order:[
-                    ['enroll_date', 'DESC']
-                ]
-            });
-        }
-        else{
-            response = await UserProduct.findAll({             
-                include: [{
-                    model: User,
-                    required: true,
-                    right: false
-                },{
-                    model: Product,
-                    required: false,
-                    right: true
-                }]
-            });
-        }
-       
-        return res.status(200).json({status: "OK", msg: "Get Product", user_products: response, user: response2});
-    }
-    catch (error){
-        return res.status(300).json({status: "Failed", msg: error.message});
-    }
-}
 
 export const getProducts = async (req, res) =>{
     try {

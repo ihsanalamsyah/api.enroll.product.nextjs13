@@ -5,8 +5,6 @@ import env from 'dotenv';
 
 env.config();
 
-
-
 const JWT_SECRET = process.env.JWT_SECRET;
 
 export const checkUser = async (req, res) =>{

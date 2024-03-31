@@ -2,7 +2,6 @@ import express  from "express";
 
 import {
      getProductById,
-     getUserGetProducts,
      getProducts,
      createProduct,
      updateProduct,
@@ -14,7 +13,7 @@ const router = express.Router();
 import { auth } from '../middlewares/auth.js';
 
 
-router.post('/api/getusergetproducts', auth, getUserGetProducts);
+
 router.post('/api/product', auth, getProductById);
 router.get('/api/products', auth, getProducts);
 router.post('/api/products', auth, createProduct);
