@@ -15,5 +15,5 @@ app.use(UserRouter);
 app.use(ProductRouter);
 app.use(LoginRouter);
 app.use(UserProductRouter);
-app.use(ImageRouter);
+// app.use(ImageRouter);
 app.listen(route, ()=> console.log(`server up and running in route ${route}...`));
